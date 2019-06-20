@@ -9,7 +9,7 @@ import (
 )
 
 var (
-	DBHOST          = config.GetEnv("DBHOST", "localhost")
+	DBHOST          = config.GetEnv("DBHOST", "postgres")
 	DBPORT          = config.GetEnv("DBPORT", "5432")
 	DBLOGINPASSWORD = config.GetEnv("DBLOGINPASSWORD", "postgres:super123")
 	DBNAME          = config.GetEnv("DBNAME", "postgres?sslmode=disable")
@@ -85,6 +85,10 @@ func UpdateStatus(guid string, status string) error {
 
 func CreateTable() error {
 	db, err := dbclient.Open(db, DBHOST, DBPORT, DBLOGINPASSWORD, DBNAME)
+	if err != nil {
+		return err
+	}
+	_, err = db.Exec(`CREATE SCHEMA ` + DBSCHEME)
 	if err != nil {
 		return err
 	}

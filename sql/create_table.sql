@@ -1,3 +1,4 @@
+CREATE SCHEMA task_example;
 CREATE TABLE task_example.tasks (
 	guid uuid NOT NULL,
 	status varchar(10) NOT NULL,
