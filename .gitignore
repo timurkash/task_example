@@ -1,12 +1,28 @@
-# Binaries for programs and plugins
-*.exe
-*.exe~
-*.dll
-*.so
-*.dylib
+### Goland template
+.idea
+*.iml
+out
+gen
 
-# Test binary, build with `go test -c`
-*.test
+### Glid, Depe template
+glide.yaml
+glide.lock
+vendor/*
+go.mod
+go.sum
 
-# Output of the go coverage tool, specifically when used with LiteIDE
-*.out
+### macOS templates
+
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent

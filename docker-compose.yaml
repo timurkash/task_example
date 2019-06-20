@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      - PGHOST=localhost
+      - PGDATABASE=postgres
+      - PGUSER=postgres
+      - POSTGRES_PASSWORD=super123
+    volumes:
+      - /home/timur/docker/volumes/postgres:/var/lib/postgresql/data
+  task_example:
+    image: timurkash/task_example:latest
+    ports:
+      - "3000:3000"
+
+networks:
+  default:
